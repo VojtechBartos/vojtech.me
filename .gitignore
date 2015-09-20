@@ -22,4 +22,4 @@ _testmain.go
 *.test
 *.prof
 
-gin-bin/
+gin-bin
