@@ -2,7 +2,7 @@ package main
 
 import (
   "net/http"
-	"html/template"
+  "html/template"
 
   "github.com/zenazn/goji"
   "github.com/zenazn/goji/web"
