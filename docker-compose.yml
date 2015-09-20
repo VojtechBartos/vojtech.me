@@ -1,4 +1,4 @@
 web:
-  image: vojtechbartos.cz/vojtech.me:latest
+  image: vojtechbartos/vojtech.me:latest
   ports:
     - "8000:8000"
