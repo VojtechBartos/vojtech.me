@@ -1,4 +1,0 @@
-web:
-  image: vojtechbartos/vojtech.me:latest
-  ports:
-    - "127.0.0.1:8000:8000"
