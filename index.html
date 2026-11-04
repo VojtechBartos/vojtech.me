@@ -1,53 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta http-equiv="content-language" content="en" />
-    <meta name="robots" content="index,follow" />
-    <meta lang="en" name="keywords" content="Vojta, Bartos, Vojta Bartos, Vojtech Bartos, software, developer, development, engineer, manager, objective-c, swi
-ft, ios, python, javascript, react" />
-
-    <title>Vojta Bartos, software engineer / manager</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vojta Bartoš</title>
+  <meta name="description" content="Vojta Bartoš is an AI Product Engineer at PostHog, previously co-founder and CTO of Understand Labs. Lives in Deštné v Orlických horách.">
+  <meta name="theme-color" content="#1B1A2E">
+  <meta property="og:title" content="Vojta Bartoš">
+  <meta property="og:description" content="AI Product Engineer at PostHog. Building software from the mountains.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://vojtech.me/">
+  <meta property="og:image" content="https://vojtech.me/avatar.jpg">
+  <link rel="canonical" href="https://vojtech.me/">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;1,7..72,400&family=Inter+Tight:wght@400;500&display=swap">
   <style>
-        @import url("https://fonts.googleapis.com/css?family=Oxygen:400,300,700&subset=latin,latin-ext");
-        body { font-family: 'Oxygen', sans-serif; color: #222222; }
-        a { color: #222222; }
-        a:hover { text-decoration: none; }
-        h1 { font-size: 32px; font-weight: normal; margin-bottom: 5px; }
-        h2 { font-size: 20px; font-weight: normal; }
-        #container { text-align: center;}
-        #container > #tags { margin-bottom: 15px; }
-        #container > #tags > span { }
-        #container > ul#links { list-style: none; margin: 0; padding: 0; }
-        #container > ul#links > li { display: inline-block; }
+    :root {
+      --sky-top: #1B1A2E;
+      --sky-mid: #2A2440;
+      --sky-low: #4A3346;
+      --sun: #F6A97A;
+      --ridge-far: #3A2C45;
+      --ridge-mid: #2B2236;
+      --ridge-near: #1E1828;
+      --text: #DCD6E2;
+      --heading: #F6F2F8;
+      --muted: #A79DB4;
+      --rule: #453B55;
+      --link: #F6C29A;
+      --link-hover: #FFE2CC;
+      --serif: 'Literata', Georgia, 'Times New Roman', serif;
+      --sans: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; background: var(--ridge-near); }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 55%, var(--sky-low) 100%);
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.7;
+    }
+    a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--link-hover); }
+    a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+    .ridges {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: clamp(180px, 26vw, 300px);
+      pointer-events: none;
+    }
+    main {
+      position: relative;
+      max-width: 620px;
+      margin: 0 auto;
+      padding-top: clamp(56px, 12vh, 112px);
+      padding-bottom: clamp(220px, 30vw, 320px);
+      padding-left: max(24px, env(safe-area-inset-left));
+      padding-right: max(24px, env(safe-area-inset-right));
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .from { display: flex; align-items: center; gap: 18px; font-family: var(--sans); font-size: 14px; line-height: 1.4; }
+    .from img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: none; }
+    .from strong { display: block; color: var(--heading); font-weight: 500; }
+    .from span { color: var(--muted); }
+    h1 {
+      margin: 0;
+      font-weight: 400;
+      font-size: clamp(30px, 6vw, 40px);
+      line-height: 1.2;
+      color: var(--heading);
+      text-wrap: balance;
+    }
+    p { margin: 0; }
+    .sign { font-style: italic; color: var(--heading); }
+    nav { display: flex; flex-wrap: wrap; gap: 12px 24px; padding-top: 24px; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: 15px; }
+    @media (max-width: 480px) { body { font-size: 18px; } }
   </style>
 </head>
 <body>
-    <div id="container">
-        <h1>Vojta Bartos</h1>
-        <h2>Software Engineer / Manager</h2>
-        <div id="tags">
-            <span>python</span> <span>javascript</span> <span>objective-c</span>
-        </div>
+  <svg class="ridges" aria-hidden="true" viewBox="0 0 1280 300" preserveAspectRatio="xMidYMax slice">
+    <circle cx="900" cy="170" r="70" fill="var(--sun)" opacity="0.85"/>
+    <path d="M0 190 L150 130 L300 175 L470 80 L600 160 L760 95 L900 165 L1060 105 L1280 170 L1280 300 L0 300 Z" fill="var(--ridge-far)"/>
+    <path d="M0 235 L180 190 L360 220 L520 175 L700 215 L880 180 L1080 222 L1280 195 L1280 300 L0 300 Z" fill="var(--ridge-mid)"/>
+    <path d="M0 270 L240 245 L480 265 L720 240 L960 262 L1280 248 L1280 300 L0 300 Z" fill="var(--ridge-near)"/>
+  </svg>
 
-        <ul id="links">
-            <li><a href="https://twitter.com/VojtechBartos" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="https://www.linkedin.com/in/vojtechbartos" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
-            <li><a href="https://www.facebook.com/VojtechBartos" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-            <li><a href="https://github.com/VojtechBartos" class="icon fa-github"><span class="label">Github</span></a></li>
-            <li><a href="mailto:hi@vojtabartos.com" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-        </ul>
-    </div>
+  <main>
+    <header class="from">
+      <img src="avatar.jpg" alt="Portrait of Vojta Bartoš" width="64" height="64">
+      <div>
+        <strong>Vojta Bartoš</strong>
+        <span>Deštné v Orlických horách</span>
+      </div>
+    </header>
 
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <h1>I build software products from the mountains.</h1>
 
-      ga('create', 'UA-63041926-1', 'auto');
-      ga('send', 'pageview');
-    </script>
+    <p>These days I'm an AI Product Engineer at <a href="https://posthog.com">PostHog</a>. Before that I co-founded Understand Labs and ran engineering as CTO until GoodData bought it in 2025. Earlier still, I joined Stories, which Workday acquired, and stayed four years as engineer, manager and principal.</p>
+
+    <p>I'm a dad of two, Miky and Stela, and I run <a href="https://www.ulisaku.cz/">Apartmány U Lišáků</a>. The apartments run on <a href="https://TODO-norka-url">Norka</a>, a reservation system I built for small hosts, with an MCP server so an AI assistant can manage it too.</p>
+
+    <p>In summer I train and race triathlons. In winter I skin up on a splitboard and ride freeride lines back down.</p>
+
+    <p class="sign">Vojta</p>
+
+    <nav aria-label="Contact">
+      <a href="mailto:hi@vojtabartos.com">hi@vojtabartos.com</a>
+      <a href="https://github.com/VojtechBartos">GitHub</a>
+      <a href="https://www.linkedin.com/in/vojtechbartos">LinkedIn</a>
+      <a href="https://x.com/VojtechBartos">X</a>
+    </nav>
+  </main>
 </body>
 </html>
