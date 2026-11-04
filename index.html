@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Vojta Bartoš</title>
   <meta name="description" content="Vojta Bartoš is an AI Product Engineer at PostHog, previously co-founder and CTO of Understand Labs. Lives in Deštné v Orlických horách.">
-  <meta name="theme-color" content="#16191F">
+  <meta name="theme-color" content="#1B1A2E">
   <meta property="og:title" content="Vojta Bartoš">
   <meta property="og:description" content="AI Product Engineer at PostHog. Building software from the mountains.">
   <meta property="og:type" content="profile">
@@ -18,22 +18,31 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;1,7..72,400&family=Inter+Tight:wght@400;500&display=swap">
   <style>
     :root {
-      --bg: #16191F;
-      --text: #D9DCE2;
-      --heading: #F2F3F5;
-      --muted: #9097A3;
-      --rule: #2B303A;
-      --link: #9DC3F0;
-      --link-hover: #CFE2F8;
+      --sky-top: #1B1A2E;
+      --sky-mid: #2A2440;
+      --sky-low: #4A3346;
+      --sun: #F6A97A;
+      --ridge-far: #3A2C45;
+      --ridge-mid: #2B2236;
+      --ridge-near: #1E1828;
+      --text: #DCD6E2;
+      --heading: #F6F2F8;
+      --muted: #A79DB4;
+      --rule: #453B55;
+      --link: #F6C29A;
+      --link-hover: #FFE2CC;
       --serif: 'Literata', Georgia, 'Times New Roman', serif;
       --sans: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
       color-scheme: dark;
     }
     * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
+    html { -webkit-text-size-adjust: 100%; background: var(--ridge-near); }
     body {
       margin: 0;
-      background: var(--bg);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 55%, var(--sky-low) 100%);
       color: var(--text);
       font-family: var(--serif);
       font-size: 19px;
@@ -42,10 +51,21 @@
     a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 3px; }
     a:hover { color: var(--link-hover); }
     a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+    .ridges {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: clamp(180px, 26vw, 300px);
+      pointer-events: none;
+    }
     main {
+      position: relative;
       max-width: 620px;
       margin: 0 auto;
-      padding-block: clamp(56px, 12vh, 112px) 96px;
+      padding-top: clamp(56px, 12vh, 112px);
+      padding-bottom: clamp(220px, 30vw, 320px);
       padding-left: max(24px, env(safe-area-inset-left));
       padding-right: max(24px, env(safe-area-inset-right));
       display: flex;
@@ -71,6 +91,13 @@
   </style>
 </head>
 <body>
+  <svg class="ridges" aria-hidden="true" viewBox="0 0 1280 300" preserveAspectRatio="xMidYMax slice">
+    <circle cx="900" cy="170" r="70" fill="var(--sun)" opacity="0.85"/>
+    <path d="M0 190 L150 130 L300 175 L470 80 L600 160 L760 95 L900 165 L1060 105 L1280 170 L1280 300 L0 300 Z" fill="var(--ridge-far)"/>
+    <path d="M0 235 L180 190 L360 220 L520 175 L700 215 L880 180 L1080 222 L1280 195 L1280 300 L0 300 Z" fill="var(--ridge-mid)"/>
+    <path d="M0 270 L240 245 L480 265 L720 240 L960 262 L1280 248 L1280 300 L0 300 Z" fill="var(--ridge-near)"/>
+  </svg>
+
   <main>
     <header class="from">
       <img src="avatar.jpg" alt="Portrait of Vojta Bartoš" width="64" height="64">
@@ -84,7 +111,7 @@
 
     <p>These days I'm an AI Product Engineer at <a href="https://posthog.com">PostHog</a>. Before that I co-founded Understand Labs and ran engineering as CTO until GoodData bought it in 2025. Earlier still, I joined Stories, which Workday acquired, and stayed four years as engineer, manager and principal.</p>
 
-    <p>I live here with my two kids, Miky and Stela, and I run <a href="https://www.ulisaku.cz/">Apartmány U Lišáků</a>. The apartments run on Norka, a reservation system I built for small hosts, with an MCP server so an AI assistant can manage it too.</p>
+    <p>I'm a dad of two, Miky and Stela, and I run <a href="https://www.ulisaku.cz/">Apartmány U Lišáků</a>. The apartments run on <a href="https://TODO-norka-url">Norka</a>, a reservation system I built for small hosts, with an MCP server so an AI assistant can manage it too.</p>
 
     <p>In summer I train and race triathlons. In winter I skin up on a splitboard and ride freeride lines back down.</p>
 
